@@ -3,6 +3,10 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/inter";
 
+@source "../components/**/*.{tsx,ts}";
+@source "../hooks/**/*.{tsx,ts}";
+@source "../lib/**/*.{tsx,ts}";
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
