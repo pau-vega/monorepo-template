@@ -1,7 +1,8 @@
 import { defineConfig } from "tsup"
+import { glob } from "glob"
 
 export default defineConfig({
-  entry: ["src/index.ts"],
+  entry: ["src/index.ts", ...glob.sync("src/components/*.tsx"), ...glob.sync("src/hooks/*.ts"), "src/lib/utils.ts"],
   format: ["esm"],
   dts: true,
   sourcemap: true,
@@ -10,4 +11,6 @@ export default defineConfig({
   banner: {
     js: '"use client";',
   },
+  outDir: "dist",
+  outExtension: () => ({ js: ".js" }),
 })

@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "@monorepo-template/ui",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -7,6 +7,18 @@
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./components/*": {
+      "import": "./dist/components/*.js",
+      "types": "./dist/components/*.d.ts"
+    },
+    "./hooks/*": {
+      "import": "./dist/hooks/*.js",
+      "types": "./dist/hooks/*.d.ts"
+    },
+    "./utils": {
+      "import": "./dist/lib/utils.js",
+      "types": "./dist/lib/utils.d.ts"
     },
     "./globals.css": "./src/styles/globals.css",
     "./postcss.config": "./postcss.config.mjs"
@@ -28,8 +40,6 @@
   "dependencies": {
     "@base-ui/react": "^1.2.0",
     "@fontsource-variable/inter": "^5.2.8",
-    "@hugeicons/core-free-icons": "^3.1.1",
-    "@hugeicons/react": "^1.1.5",
     "@tailwindcss/vite": "^4.1.17",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -37,13 +47,14 @@
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
+    "lucide-react": "^0.574.0",
     "next-themes": "^0.4.6",
     "react": "^19.2.0",
     "react-day-picker": "^9.13.2",
     "react-dom": "^19.2.0",
     "react-resizable-panels": "^4.6.4",
     "recharts": "2.15.4",
-    "shadcn": "^3.8.4",
+    "shadcn": "^3.8.5",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.1",
     "tailwindcss": "^4.1.17",
@@ -51,20 +62,15 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
+    "@monorepo-template/eslint-config": "workspace:*",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
-    "eslint": "^9.39.1",
-    "eslint-config": "workspace:*",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
-    "globals": "^16.5.0",
+    "glob": "^13.0.3",
+    "globals": "^17.3.0",
     "prettier": "^3.8.1",
     "tsup": "^8.5.1",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4"
   }
 }
