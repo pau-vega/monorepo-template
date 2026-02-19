@@ -30,8 +30,7 @@
     "dev": "tsup --watch",
     "lint": "eslint . --fix",
     "format": "prettier --write .",
-    "typecheck": "tsc --noEmit",
-    "clean": "rimraf dist node_modules .turbo"
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
