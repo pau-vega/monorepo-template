@@ -1,5 +1,5 @@
-import { defineConfig } from "tsup"
 import { glob } from "glob"
+import { defineConfig } from "tsup"
 
 export default defineConfig({
   entry: ["src/index.ts", ...glob.sync("src/components/*.tsx"), ...glob.sync("src/hooks/*.ts"), "src/lib/utils.ts"],

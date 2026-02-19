@@ -1,4 +1,4 @@
-import { react } from "eslint-config"
+import { react } from "@monorepo-template/eslint-config"
 import { defineConfig } from "eslint/config"
 
 export default defineConfig([
@@ -12,6 +12,7 @@ export default defineConfig([
     rules: {
       "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "off",
       "react-refresh/only-export-components": "off",
+      "@eslint-react/no-nested-component-definitions": "off",
     },
   },
 ])
