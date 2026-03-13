@@ -15,11 +15,6 @@
     "test": "turbo test",
     "e2e": "turbo e2e",
     "test:coverage": "turbo test -- --coverage",
-    "nuke": "find . -type d \\( -name node_modules -o -name dist -o -name build -o -name .turbo -o -name .next -o -name .cache -o -name coverage \\) -prune -exec rm -rf '{}' +",
-    "phoenix": "pnpm nuke && pnpm install",
-    "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "pnpm build && changeset publish",
     "prepare": "husky"
   },
   "devDependencies": {
