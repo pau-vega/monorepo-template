@@ -21,8 +21,6 @@ updates:
         patterns: ["eslint*", "@eslint/*", "@eslint-react/*"]
       build-tools:
         patterns: ["tsup", "turbo", "vite", "@vitejs/*", "rimraf"]
-      changesets:
-        patterns: ["@changesets/*"]
     ignore:
       - dependency-name: "recharts"
         update-types: ["version-update:semver-major"]
