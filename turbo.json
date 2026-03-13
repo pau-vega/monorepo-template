@@ -18,6 +18,13 @@
     },
     "format": {
       "dependsOn": ["^format"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"]
     }
   }
 }

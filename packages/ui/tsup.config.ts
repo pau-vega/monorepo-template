@@ -1,16 +1,28 @@
 import { glob } from "glob"
 import { defineConfig } from "tsup"
 
-export default defineConfig({
-  entry: ["src/index.ts", ...glob.sync("src/components/*.tsx"), ...glob.sync("src/hooks/*.ts"), "src/lib/utils.ts"],
-  format: ["esm"],
-  dts: true,
-  sourcemap: true,
-  clean: true,
-  external: ["react", "react-dom"],
-  banner: {
-    js: '"use client";',
+export default defineConfig([
+  {
+    // Components + hooks: need "use client"
+    entry: [...glob.sync("src/components/*.tsx"), ...glob.sync("src/hooks/*.ts")],
+    format: ["esm"],
+    dts: true,
+    sourcemap: true,
+    clean: true,
+    external: ["react", "react-dom"],
+    banner: { js: '"use client";' },
+    outDir: "dist",
+    outExtension: () => ({ js: ".js" }),
   },
-  outDir: "dist",
-  outExtension: () => ({ js: ".js" }),
-})
+  {
+    // Barrel index + utils: no "use client"
+    entry: ["src/index.ts", "src/lib/utils.ts"],
+    format: ["esm"],
+    dts: true,
+    sourcemap: true,
+    clean: false,
+    external: ["react", "react-dom"],
+    outDir: "dist",
+    outExtension: () => ({ js: ".js" }),
+  },
+])
