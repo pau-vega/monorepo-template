@@ -75,14 +75,10 @@ e2e:
 
 # --- Git & Release ---
 
-# Show git status and changeset status
+# Show git status
 [group('release')]
 status:
-    @echo "=== Git Status ==="
     @git status
-    @echo ""
-    @echo "=== Changesets ==="
-    @pnpm changeset status
 
 # Show which packages have changed since main
 [group('release')]
@@ -90,25 +86,11 @@ diff:
     @echo "=== Changed packages ==="
     @git diff --name-only origin/main...HEAD | grep -E '^packages/[^/]+' | cut -d/ -f2 | sort -u || echo "No package changes detected"
 
-# Dry-run the release process
-[group('release')]
-prerelease:
-    @echo "=== Building ==="
-    pnpm build
-    @echo ""
-    @echo "=== Release simulation (no publish) ==="
-    pnpm changeset status
-
-# Version packages with changesets
-[group('release')]
-version-packages:
-    pnpm changeset version
-
-# Build all packages and publish changesets
+# Build and publish all packages
 [group('release')]
 release:
     pnpm build
-    pnpm changeset publish
+    pnpm publish -r
 
 # --- Debugging ---
 
