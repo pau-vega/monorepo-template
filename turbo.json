@@ -1,6 +1,6 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
-  "globalDependencies": ["tsconfig.base.json"],
+  "globalDependencies": ["tsconfig.base.json", "packages/tsconfig/*.json"],
   "globalEnv": ["NODE_ENV", "CI"],
 
   "tasks": {
