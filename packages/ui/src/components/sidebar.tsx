@@ -1,3 +1,5 @@
+import type { VariantProps } from "class-variance-authority"
+
 import { mergeProps } from "@base-ui/react/merge-props"
 import { useRender } from "@base-ui/react/use-render"
 import { Button } from "@ui/components/button"
@@ -8,7 +10,7 @@ import { Skeleton } from "@ui/components/skeleton"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@ui/components/tooltip"
 import { useIsMobile } from "@ui/hooks/use-mobile"
 import { cn } from "@ui/lib/utils"
-import { cva, type VariantProps } from "class-variance-authority"
+import { cva } from "class-variance-authority"
 import { PanelLeftIcon } from "lucide-react"
 import * as React from "react"
 
@@ -31,7 +33,7 @@ type SidebarContextProps = {
 
 const SidebarContext = React.createContext<SidebarContextProps | null>(null)
 
-function useSidebar() {
+function useSidebar(): SidebarContextProps {
   const context = React.use(SidebarContext)
   if (!context) {
     throw new Error("useSidebar must be used within a SidebarProvider.")

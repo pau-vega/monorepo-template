@@ -236,7 +236,7 @@ function ComboboxChipsInput({ className, ...props }: ComboboxPrimitive.Input.Pro
   )
 }
 
-function useComboboxAnchor() {
+function useComboboxAnchor(): React.RefObject<HTMLDivElement | null> {
   return React.useRef<HTMLDivElement | null>(null)
 }
 

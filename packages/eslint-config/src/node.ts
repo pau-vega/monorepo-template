@@ -6,7 +6,7 @@ import { defineConfig, globalIgnores } from "eslint/config"
 import globals from "globals"
 import tseslint from "typescript-eslint"
 
-export default defineConfig([
+export const node = defineConfig([
   globalIgnores(["dist/**", "build/**", "node_modules/**", "coverage/**", ".turbo/**"]),
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],

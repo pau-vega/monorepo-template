@@ -40,7 +40,7 @@ import * as React from "react"
 
 import { Example, ExampleWrapper } from "@/components/example"
 
-const invoices = [
+const INVOICES = [
   { invoice: "INV001", status: "Paid", method: "Credit Card", amount: "$250.00" },
   { invoice: "INV002", status: "Pending", method: "PayPal", amount: "$150.00" },
   { invoice: "INV003", status: "Unpaid", method: "Bank Transfer", amount: "$350.00" },
@@ -204,7 +204,7 @@ function TableExample() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {invoices.map((inv) => (
+          {INVOICES.map((inv) => (
             <TableRow key={inv.invoice}>
               <TableCell className="font-medium">{inv.invoice}</TableCell>
               <TableCell>

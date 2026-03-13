@@ -61,23 +61,21 @@ type User = {
 };
 ```
 
-### Prefer `string | undefined` over optional properties
+### Prefer optional properties over `T | undefined`
 
-Optional properties (`prop?: T`) hide bugs — forgetting to pass them is silent. Use `prop: T | undefined` so the caller is forced to explicitly provide the value (even if it's `undefined`).
+Use `prop?: T` for optional properties — it's more concise and idiomatic.
 
 ```ts
-// Avoid — forgetting userId is silent
-type AuthOptions = {
-  userId?: string;
-};
-
-// Prefer — forces the caller to think about it
+// Avoid
 type AuthOptions = {
   userId: string | undefined;
 };
-```
 
-Only use `?` when the property is truly optional and omitting it cannot cause bugs.
+// Prefer
+type AuthOptions = {
+  userId?: string;
+};
+```
 
 ### `noUncheckedIndexedAccess` awareness
 
@@ -115,7 +113,7 @@ type RecordOfArrays<TItem> = Record<string, TItem[]>;
 
 ### Declare return types on top-level functions
 
-Explicit return types on module-level functions help both humans and AI assistants understand intent. Exception: JSX components don't need a return type annotation.
+Explicit return types on module-level functions help both humans and AI assistants understand intent. Exceptions: JSX components and custom hooks don't need a return type annotation.
 
 ```ts
 const parseInput = (raw: string): ParsedInput => { ... };
@@ -123,6 +121,12 @@ const parseInput = (raw: string): ParsedInput => { ... };
 // Components — no return type needed
 const MyComponent = () => {
   return <div>Hello</div>;
+};
+
+// Custom hooks — no return type needed
+const useMyHook = () => {
+  const [value, setValue] = useState(0);
+  return { value, setValue };
 };
 ```
 
@@ -138,19 +142,49 @@ type Result<T, E extends Error> =
 
 Throwing is fine when the framework handles it (e.g., inside a request handler that catches errors automatically). Use Result when the caller would need a manual try-catch.
 
-### Allow `any` inside generic function bodies
+### Never use `any` — prefer generics or `unknown`
 
-TypeScript often can't match runtime logic to conditional return types inside generic functions. Using `as any` for the return value is the most concise workaround:
+`any` disables type checking entirely and defeats the purpose of TypeScript. Always use a more precise alternative:
+
+- **Generic types** when the type varies but has structure:
 
 ```ts
+// Avoid
+const first = (arr: any[]): any => arr[0];
+
+// Prefer
+const first = <TItem>(arr: TItem[]): TItem | undefined => arr[0];
+```
+
+- **`unknown`** when the type is truly unknown — forces the caller to narrow before using:
+
+```ts
+// Avoid
+const parse = (raw: string): any => JSON.parse(raw);
+
+// Prefer
+const parse = (raw: string): unknown => JSON.parse(raw);
+```
+
+- **Function overloads** when a generic function has conditional return types that TypeScript can't infer:
+
+```ts
+// Avoid — `as any` inside generic body
 const toggle = <T extends "on" | "off">(
   input: T,
 ): T extends "on" ? "off" : "on" => {
   return (input === "on" ? "off" : "on") as any;
 };
+
+// Prefer — overloads with a generic implementation signature
+function toggle(input: "on"): "off";
+function toggle(input: "off"): "on";
+function toggle(input: "on" | "off"): "on" | "off" {
+  return input === "on" ? "off" : "on";
+}
 ```
 
-Outside generic functions, use `any` extremely sparingly.
+If none of the above work, use `as unknown as T` instead of `as any` — it preserves type safety at the boundary.
 
 ## Imports & Exports
 

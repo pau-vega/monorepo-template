@@ -1,10 +1,11 @@
 "use client"
 
+import type { VariantProps } from "class-variance-authority"
+
 import { Toggle as TogglePrimitive } from "@base-ui/react/toggle"
 import { ToggleGroup as ToggleGroupPrimitive } from "@base-ui/react/toggle-group"
 import { toggleVariants } from "@ui/components/toggle"
 import { cn } from "@ui/lib/utils"
-import { type VariantProps } from "class-variance-authority"
 import * as React from "react"
 
 const ToggleGroupContext = React.createContext<

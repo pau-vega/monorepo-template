@@ -101,9 +101,9 @@ import * as React from "react"
 
 import { Example, ExampleWrapper } from "@/components/example"
 
-const frameworks = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"] as const
+const FRAMEWORKS = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"] as const
 
-const roleItems = [
+const ROLE_ITEMS = [
   { label: "Developer", value: "developer" },
   { label: "Designer", value: "designer" },
   { label: "Manager", value: "manager" },
@@ -385,13 +385,13 @@ function FormExample() {
                 </Field>
                 <Field>
                   <FieldLabel htmlFor="small-form-role">Role</FieldLabel>
-                  <Select items={roleItems} defaultValue={null}>
+                  <Select items={ROLE_ITEMS} defaultValue={null}>
                     <SelectTrigger id="small-form-role">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
-                        {roleItems.map((item) => (
+                        {ROLE_ITEMS.map((item) => (
                           <SelectItem key={item.value} value={item.value}>
                             {item.label}
                           </SelectItem>
@@ -403,7 +403,7 @@ function FormExample() {
               </div>
               <Field>
                 <FieldLabel htmlFor="small-form-framework">Framework</FieldLabel>
-                <Combobox items={frameworks}>
+                <Combobox items={FRAMEWORKS}>
                   <ComboboxInput id="small-form-framework" placeholder="Select a framework" required />
                   <ComboboxContent>
                     <ComboboxEmpty>No frameworks found.</ComboboxEmpty>
