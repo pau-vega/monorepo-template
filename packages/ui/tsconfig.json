@@ -1,10 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
-  "include": ["src/**/*"],
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "isolatedModules": true,
-    "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
       "@ui": ["./src/index.ts"],
