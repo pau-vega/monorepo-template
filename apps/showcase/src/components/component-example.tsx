@@ -19,7 +19,14 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@monorepo-template/ui/components/alert-dialog"
-import { Avatar, AvatarBadge, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarImage } from "@monorepo-template/ui/components/avatar"
+import {
+  Avatar,
+  AvatarBadge,
+  AvatarFallback,
+  AvatarGroup,
+  AvatarGroupCount,
+  AvatarImage,
+} from "@monorepo-template/ui/components/avatar"
 import { Badge } from "@monorepo-template/ui/components/badge"
 import {
   Breadcrumb,
@@ -76,13 +83,34 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@monorepo-template/ui/components/dropdown-menu"
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@monorepo-template/ui/components/empty"
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@monorepo-template/ui/components/empty"
 import { Field, FieldGroup, FieldLabel } from "@monorepo-template/ui/components/field"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@monorepo-template/ui/components/hover-card"
 import { Input } from "@monorepo-template/ui/components/input"
-import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText } from "@monorepo-template/ui/components/input-group"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+  InputGroupText,
+} from "@monorepo-template/ui/components/input-group"
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@monorepo-template/ui/components/input-otp"
-import { Item, ItemActions, ItemContent, ItemDescription, ItemGroup, ItemMedia, ItemTitle } from "@monorepo-template/ui/components/item"
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemMedia,
+  ItemTitle,
+} from "@monorepo-template/ui/components/item"
 import { Kbd, KbdGroup } from "@monorepo-template/ui/components/kbd"
 import {
   Pagination,
@@ -701,9 +729,7 @@ function AccordionExample() {
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger>Is it animated?</AccordionTrigger>
-          <AccordionContent>
-            Yes. It&apos;s animated by default, but you can disable it if you prefer.
-          </AccordionContent>
+          <AccordionContent>Yes. It&apos;s animated by default, but you can disable it if you prefer.</AccordionContent>
         </AccordionItem>
       </Accordion>
     </Example>
@@ -897,7 +923,9 @@ function HoverCardExample() {
               </Avatar>
               <div className="space-y-1">
                 <p className="text-sm font-medium">@nextjs</p>
-                <p className="text-muted-foreground text-xs">The React Framework – created and maintained by @vercel.</p>
+                <p className="text-muted-foreground text-xs">
+                  The React Framework – created and maintained by @vercel.
+                </p>
                 <div className="text-muted-foreground flex items-center gap-1 pt-1 text-xs">
                   <CalendarIcon className="size-3" />
                   Joined December 2021
