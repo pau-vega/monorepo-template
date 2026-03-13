@@ -44,6 +44,6 @@
     "eslint": "catalog:",
     "eslint-plugin-react-refresh": "^0.5.2",
     "prettier": "catalog:",
-    "tsup": "^8.5.1"
+    "tsup": "catalog:"
   }
 }
