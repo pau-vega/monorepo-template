@@ -30,7 +30,7 @@
     "jsdom": "catalog:",
     "prettier": "catalog:",
     "rimraf": "catalog:",
-    "turbo": "^2.8.16",
+    "turbo": "^2.8.17",
     "typescript": "catalog:",
     "vitest": "catalog:"
   },
