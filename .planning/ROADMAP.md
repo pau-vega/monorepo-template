@@ -44,7 +44,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 02-01-PLAN.md — Document tsup workaround, verify typecheck/build/test with TS5101 grep, fix any breakage
+- [x] 02-01-PLAN.md — Document tsup workaround, verify typecheck/build/test with TS5101 grep, fix any breakage
 
 ## Progress
 
