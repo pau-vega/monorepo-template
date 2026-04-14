@@ -4,6 +4,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "noEmit": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "types": ["react", "react-dom", "vitest/globals"]
   }
 }
