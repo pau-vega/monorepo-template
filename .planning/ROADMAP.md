@@ -27,7 +27,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. `@tsconfig/node24` preset is confirmed compatible with TS6 (no TS5101 warnings from the preset)
   4. Base and react-app presets set `types` explicitly so TS6's new default does not break type resolution
   5. eslint-config peer dependency accepts TypeScript v6 (updated to `>=5.0.0`)
-**Plans**: TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 01-01-PLAN.md — Bump TS catalog, remove baseUrl, add types to presets, verify zero warnings
 
 ### Phase 2: Build & Verification
 **Goal**: The full monorepo build, typecheck, and test run pass cleanly under TypeScript 6 — zero errors, zero deprecation warnings, working DTS output
@@ -47,5 +50,5 @@ Phases execute in numeric order: 1 → 2
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Catalog Bump & TSConfig Cleanup | 0/TBD | Not started | - |
+| 1. Catalog Bump & TSConfig Cleanup | 0/1 | Not started | - |
 | 2. Build & Verification | 0/TBD | Not started | - |
