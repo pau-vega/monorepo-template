@@ -19,8 +19,12 @@ The template starts new projects on the latest TypeScript with zero deprecation 
 
 ### Active
 
-- [ ] All packages pass `typecheck` with zero errors and zero deprecation warnings
-- [ ] `preserveConstEnums` deprecation in base tsconfig — confirmed NOT deprecated in TS6 (no action needed)
+None — all requirements validated.
+
+### Recently Validated (Phase 2)
+
+- [x] All packages pass `typecheck` with zero errors and zero deprecation warnings — Validated in Phase 2
+- [x] `preserveConstEnums` deprecation in base tsconfig — confirmed NOT deprecated in TS6 (no action needed) — Validated in Phase 2
 
 ### Out of Scope
 
@@ -68,5 +72,9 @@ This document evolves at phase transitions and milestone boundaries.
 3. Audit Out of Scope — reasons still valid?
 4. Update Context with current state
 
+## Current State
+
+Phase 2 complete — TypeScript 6 migration fully verified. All packages typecheck, build, and test with zero TS5101 warnings. DTS output working with scoped tsup workaround (tsup#1388). Template is a clean TS6 starting point.
+
 ---
-*Last updated: 2026-04-14 after Phase 1 completion*
+*Last updated: 2026-04-14 after Phase 2 completion*
