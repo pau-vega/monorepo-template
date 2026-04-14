@@ -2,27 +2,29 @@ packages:
   - apps/*
   - packages/*
 
-dedupePeerDependents: true
-preferFrozenLockfile: true
-onlyBuiltDependencies: []
-
 catalog:
-  "@testing-library/jest-dom": ^6.6.3
-  "@testing-library/react": ^16.3.0
-  "@testing-library/user-event": ^14.6.1
-  "@types/react": ^19.2.5
-  "@types/react-dom": ^19.2.3
-  "@vitejs/plugin-react": ^6.0.0
-  "@vitest/coverage-v8": ^4.1.0
-  eslint: ^10.0.3
-  globals: ^17.4.0
-  jsdom: ^28.1.0
-  prettier: ^3.8.1
-  react: ^19.2.0
-  react-dom: ^19.2.0
+  '@testing-library/jest-dom': ^6.9.1
+  '@testing-library/react': ^16.3.2
+  '@testing-library/user-event': ^14.6.1
+  '@types/react': ^19.2.14
+  '@types/react-dom': ^19.2.3
+  '@vitejs/plugin-react': ^6.0.1
+  '@vitest/coverage-v8': ^4.1.4
+  eslint: ^10.2.0
+  globals: ^17.5.0
+  jsdom: ^29.0.2
+  prettier: ^3.8.2
+  react: ^19.2.5
+  react-dom: ^19.2.5
   rimraf: ^6.1.3
-  tailwindcss: ^4.2.1
+  tailwindcss: ^4.2.2
   tsup: ^8.5.1
   typescript: ^5.9.3
-  vite: ^8.0.0
-  vitest: ^4.1.0
+  vite: ^8.0.8
+  vitest: ^4.1.4
+
+dedupePeerDependents: true
+
+onlyBuiltDependencies: []
+
+preferFrozenLockfile: true

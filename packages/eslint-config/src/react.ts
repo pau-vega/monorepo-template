@@ -26,7 +26,7 @@ export const react = defineConfig([
       eslintJs.configs.recommended,
       ...tseslint.configs.recommended,
       eslintConfigPrettier,
-      reactPlugin.configs.recommended,
+      reactPlugin.configs["recommended-typescript"],
       reactHooks.configs.flat.recommended,
       reactRefresh.configs.recommended,
     ],

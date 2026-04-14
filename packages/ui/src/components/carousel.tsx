@@ -1,8 +1,8 @@
-import type { UseEmblaCarouselType } from "embla-carousel-react"
+"use client"
 
 import { Button } from "@ui/components/button"
 import { cn } from "@ui/lib/utils"
-import useEmblaCarousel from "embla-carousel-react"
+import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react"
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import * as React from "react"
 
@@ -11,26 +11,26 @@ type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
 type CarouselOptions = UseCarouselParameters[0]
 type CarouselPlugin = UseCarouselParameters[1]
 
-interface CarouselProps {
+type CarouselProps = {
   opts?: CarouselOptions
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
 }
 
-interface CarouselContextProps extends CarouselProps {
+type CarouselContextProps = {
   carouselRef: ReturnType<typeof useEmblaCarousel>[0]
   api: ReturnType<typeof useEmblaCarousel>[1]
   scrollPrev: () => void
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
-}
+} & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 
-function useCarousel(): CarouselContextProps {
-  const context = React.use(CarouselContext)
+function useCarousel() {
+  const context = React.useContext(CarouselContext)
 
   if (!context) {
     throw new Error("useCarousel must be used within a <Carousel />")
@@ -102,13 +102,11 @@ function Carousel({
   }, [api, onSelect])
 
   return (
-    <CarouselContext
+    <CarouselContext.Provider
       value={{
         carouselRef,
         api: api,
         opts,
-        plugins,
-        setApi,
         orientation: orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
         scrollPrev,
         scrollNext,
@@ -126,7 +124,7 @@ function Carousel({
       >
         {children}
       </div>
-    </CarouselContext>
+    </CarouselContext.Provider>
   )
 }
 

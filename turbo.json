@@ -3,6 +3,13 @@
   "globalDependencies": ["tsconfig.base.json", "packages/tsconfig/*.json"],
   "globalEnv": ["NODE_ENV", "CI"],
 
+  "remoteCache": {
+    "enabled": true,
+    "signature": false,
+    "timeout": 30,
+    "uploadTimeout": 60
+  },
+
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

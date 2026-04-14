@@ -1,5 +1,3 @@
-"use client"
-
 import { Combobox as ComboboxPrimitive } from "@base-ui/react"
 import { Button } from "@ui/components/button"
 import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@ui/components/input-group"
@@ -236,7 +234,7 @@ function ComboboxChipsInput({ className, ...props }: ComboboxPrimitive.Input.Pro
   )
 }
 
-function useComboboxAnchor(): React.RefObject<HTMLDivElement | null> {
+function useComboboxAnchor() {
   return React.useRef<HTMLDivElement | null>(null)
 }
 

@@ -109,6 +109,13 @@ logs service:
     @echo "Tailing logs for '{{service}}'... (Press Ctrl+C to stop)"
     @grep -r "{{service}}" . --include="*.log" -i 2>/dev/null | tail -f || echo "No logs found for {{service}}"
 
+# --- UI ---
+
+# Update all shadcn components in the ui package
+[group('ui')]
+update-ui:
+    pnpm --filter @monorepo-template/ui exec npx shadcn@latest add --all --overwrite
+
 # --- Maintenance ---
 
 # Remove dist/build artifacts (less aggressive than nuke)
