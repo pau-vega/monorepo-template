@@ -6,7 +6,7 @@ export default defineConfig([
     // Components + hooks: need "use client"
     entry: [...glob.sync("src/components/*.tsx"), ...glob.sync("src/hooks/*.ts")],
     format: ["esm"],
-    dts: true,
+    dts: { compilerOptions: { ignoreDeprecations: "6.0" } },
     sourcemap: true,
     clean: true,
     external: ["react", "react-dom"],
@@ -18,7 +18,7 @@ export default defineConfig([
     // Barrel index + utils: no "use client"
     entry: ["src/index.ts", "src/lib/utils.ts"],
     format: ["esm"],
-    dts: true,
+    dts: { compilerOptions: { ignoreDeprecations: "6.0" } },
     sourcemap: true,
     clean: false,
     external: ["react", "react-dom"],

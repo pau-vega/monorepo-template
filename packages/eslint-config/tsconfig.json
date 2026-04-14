@@ -3,6 +3,7 @@
   "include": ["src", "*.ts"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
+    "types": ["node"],
     "paths": {
       "@/*": ["./src/*"]
     }
