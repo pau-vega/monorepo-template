@@ -41,7 +41,10 @@ Plans:
   2. `turbo build` completes successfully with no TypeScript deprecation warnings in any package output
   3. DTS files are generated correctly — tsup DTS output is valid, with scoped `ignoreDeprecations` workaround applied if tsup#1388 is still unfixed
   4. All existing tests pass under `turbo test` with no new failures
-**Plans**: TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 02-01-PLAN.md — Document tsup workaround, verify typecheck/build/test with TS5101 grep, fix any breakage
 
 ## Progress
 
@@ -51,4 +54,4 @@ Phases execute in numeric order: 1 → 2
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Catalog Bump & TSConfig Cleanup | 0/1 | Not started | - |
-| 2. Build & Verification | 0/TBD | Not started | - |
+| 2. Build & Verification | 0/1 | Not started | - |
