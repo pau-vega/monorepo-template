@@ -49,23 +49,23 @@ Deferred to future work. Tracked but not in current scope.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CAT-01 | TBD | Pending |
-| CAT-02 | TBD | Pending |
-| TSC-01 | TBD | Pending |
-| TSC-02 | TBD | Pending |
-| TSC-03 | TBD | Pending |
-| TSC-04 | TBD | Pending |
-| TSC-05 | TBD | Pending |
-| BLD-01 | TBD | Pending |
-| BLD-02 | TBD | Pending |
-| BLD-03 | TBD | Pending |
-| BLD-04 | TBD | Pending |
+| CAT-01 | Phase 1 | Pending |
+| CAT-02 | Phase 1 | Pending |
+| TSC-01 | Phase 1 | Pending |
+| TSC-02 | Phase 1 | Pending |
+| TSC-03 | Phase 1 | Pending |
+| TSC-04 | Phase 1 | Pending |
+| TSC-05 | Phase 1 | Pending |
+| BLD-01 | Phase 2 | Pending |
+| BLD-02 | Phase 2 | Pending |
+| BLD-03 | Phase 2 | Pending |
+| BLD-04 | Phase 2 | Pending |
 
 **Coverage:**
 - v1 requirements: 11 total
-- Mapped to phases: 0
-- Unmapped: 11 ⚠️
+- Mapped to phases: 11
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-14*
-*Last updated: 2026-04-14 after initial definition*
+*Last updated: 2026-04-14 after roadmap creation*
