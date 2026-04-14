@@ -4,34 +4,6 @@ import { ChevronLeftIcon, ChevronRightIcon, ChevronDownIcon } from "lucide-react
 import * as React from "react"
 import { DayPicker, getDefaultClassNames, type DayButton, type Locale } from "react-day-picker"
 
-function CalendarRoot({
-  className,
-  rootRef,
-  ...props
-}: React.ComponentProps<"div"> & { rootRef?: React.Ref<HTMLDivElement> }) {
-  return <div data-slot="calendar" ref={rootRef} className={cn(className)} {...props} />
-}
-
-function CalendarChevron({ className, orientation, ...props }: React.ComponentProps<"svg"> & { orientation?: string }) {
-  if (orientation === "left") {
-    return <ChevronLeftIcon className={cn("size-4", className)} {...props} />
-  }
-
-  if (orientation === "right") {
-    return <ChevronRightIcon className={cn("size-4", className)} {...props} />
-  }
-
-  return <ChevronDownIcon className={cn("size-4", className)} {...props} />
-}
-
-function CalendarWeekNumber({ children, ...props }: React.ComponentProps<"td">) {
-  return (
-    <td {...props}>
-      <div className="flex size-(--cell-size) items-center justify-center text-center">{children}</div>
-    </td>
-  )
-}
-
 function Calendar({
   className,
   classNames,
@@ -129,11 +101,28 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        Root: CalendarRoot,
-        Chevron: CalendarChevron,
-        // eslint-disable-next-line @eslint-react/component-hook-factories -- DayPicker override that captures locale from parent scope
+        Root: ({ className, rootRef, ...props }) => {
+          return <div data-slot="calendar" ref={rootRef} className={cn(className)} {...props} />
+        },
+        Chevron: ({ className, orientation, ...props }) => {
+          if (orientation === "left") {
+            return <ChevronLeftIcon className={cn("size-4", className)} {...props} />
+          }
+
+          if (orientation === "right") {
+            return <ChevronRightIcon className={cn("size-4", className)} {...props} />
+          }
+
+          return <ChevronDownIcon className={cn("size-4", className)} {...props} />
+        },
         DayButton: ({ ...props }) => <CalendarDayButton locale={locale} {...props} />,
-        WeekNumber: CalendarWeekNumber,
+        WeekNumber: ({ children, ...props }) => {
+          return (
+            <td {...props}>
+              <div className="flex size-(--cell-size) items-center justify-center text-center">{children}</div>
+            </td>
+          )
+        },
         ...components,
       }}
       {...props}
