@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 1 plan
 
 Plans:
-- [ ] 01-01-PLAN.md — Bump TS catalog, remove baseUrl, add types to presets, verify zero warnings
+- [x] 01-01-PLAN.md — Bump TS catalog, remove baseUrl, add types to presets, verify zero warnings
 
 ### Phase 2: Build & Verification
 **Goal**: The full monorepo build, typecheck, and test run pass cleanly under TypeScript 6 — zero errors, zero deprecation warnings, working DTS output
