@@ -12,16 +12,15 @@ The template starts new projects on the latest TypeScript with zero deprecation 
 
 ### Validated
 
-(None yet — ship to validate)
+- [x] Upgrade TypeScript from ^5.9.3 to ^6.0.2 in pnpm catalog — Validated in Phase 1
+- [x] Resolve `baseUrl` deprecation in app/package tsconfigs (showcase, ui, eslint-config) — Validated in Phase 1
+- [x] Update `@tsconfig/node24` base preset if needed for TS6 compatibility — Validated in Phase 1 (compatible, no changes needed)
+- [x] Update eslint-config peer dependency from `"typescript": "^5.0.0"` to include v6 — Validated in Phase 1
 
 ### Active
 
-- [ ] Upgrade TypeScript from ^5.9.3 to ^6.0.2 in pnpm catalog
-- [ ] Resolve `baseUrl` deprecation in app/package tsconfigs (showcase, ui, eslint-config)
-- [ ] Resolve `preserveConstEnums` deprecation in base tsconfig if affected
-- [ ] Update `@tsconfig/node24` base preset if needed for TS6 compatibility
-- [ ] Update eslint-config peer dependency from `"typescript": "^5.0.0"` to include v6
 - [ ] All packages pass `typecheck` with zero errors and zero deprecation warnings
+- [ ] `preserveConstEnums` deprecation in base tsconfig — confirmed NOT deprecated in TS6 (no action needed)
 
 ### Out of Scope
 
@@ -48,7 +47,9 @@ The template starts new projects on the latest TypeScript with zero deprecation 
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Remove `baseUrl` instead of using `ignoreDeprecations` | Template should be clean for new projects, not carry forward workarounds | — Pending |
+| Remove `baseUrl` instead of using `ignoreDeprecations` | Template should be clean for new projects, not carry forward workarounds | Done — Phase 1 |
+| Scoped `ignoreDeprecations` in tsup DTS config only | tsup#1388 requires the flag internally; scoping to tool config keeps shared presets clean | Done — Phase 1 |
+| Explicit `types` arrays in react presets | TS6 defaults `types` to `[]`; react presets must list react, react-dom, vitest/globals | Done — Phase 1 |
 
 ## Evolution
 
@@ -68,4 +69,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-14 after initialization*
+*Last updated: 2026-04-14 after Phase 1 completion*
