@@ -1,11 +1,7 @@
-"use client"
-
-import type { VariantProps } from "class-variance-authority"
-
 import { Label } from "@ui/components/label"
 import { Separator } from "@ui/components/separator"
 import { cn } from "@ui/lib/utils"
-import { cva } from "class-variance-authority"
+import { cva, type VariantProps } from "class-variance-authority"
 import { useMemo } from "react"
 
 function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
@@ -165,7 +161,7 @@ function FieldError({
   errors,
   ...props
 }: React.ComponentProps<"div"> & {
-  errors: Array<{ message?: string } | undefined> | undefined
+  errors?: Array<{ message?: string } | undefined>
 }) {
   const content = useMemo(() => {
     if (children) {

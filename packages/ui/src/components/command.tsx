@@ -1,3 +1,5 @@
+"use client"
+
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@ui/components/dialog"
 import { InputGroup, InputGroupAddon } from "@ui/components/input-group"
 import { cn } from "@ui/lib/utils"

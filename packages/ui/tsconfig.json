@@ -1,6 +1,6 @@
 {
   "extends": "@monorepo-template/tsconfig/react-library.json",
-  "include": ["src"],
+  "include": ["src", "*.ts"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "baseUrl": ".",
