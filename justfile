@@ -139,7 +139,6 @@ nuke: clean-artifacts
 
 # Nuke everything and reinstall dependencies
 [group('maintenance')]
-[confirm("This will delete all dependencies and generated files, and reinstall them. Continue?")]
 [default]
 phoenix: nuke
     pnpm install
