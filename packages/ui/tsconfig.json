@@ -3,7 +3,6 @@
   "include": ["src", "*.ts"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@ui": ["./src/index.ts"],
       "@ui/*": ["./src/*"]
