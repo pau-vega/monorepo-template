@@ -17,6 +17,11 @@ dev:
 build *filter:
     {{ if filter == "" { "pnpm build" } else { "pnpm build --filter " + filter } }}
 
+# Build and serve the production preview of apps/showcase
+[group('dev')]
+preview:
+    pnpm preview
+
 # Run linters across all packages
 [group('dev')]
 lint:
