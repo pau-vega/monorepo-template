@@ -14,6 +14,7 @@ export default defineConfig([
       "react-refresh/only-export-components": "off",
       "@eslint-react/no-nested-component-definitions": "off",
       "@eslint-react/component-hook-factories": "warn",
+      "react-hooks/set-state-in-effect": "warn",
     },
   },
 ])
