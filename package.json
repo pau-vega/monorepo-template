@@ -9,14 +9,14 @@
     "build": "turbo build",
     "preview": "turbo preview",
     "lint": "turbo lint",
-    "format": "turbo format",
+    "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "turbo typecheck",
     "clean": "turbo clean",
     "test": "turbo test",
     "e2e": "turbo e2e",
     "test:coverage": "turbo test -- --coverage",
-    "prepare": "husky"
+    "lint:check": "turbo lint:check"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.3",
@@ -27,8 +27,8 @@
     "@testing-library/user-event": "catalog:",
     "@types/node": "^25.6.0",
     "@vitest/coverage-v8": "catalog:",
-    "husky": "^9.1.7",
     "jsdom": "catalog:",
+    "lefthook": "^2.1.6",
     "prettier": "catalog:",
     "rimraf": "catalog:",
     "turbo": "^2.9.9",

@@ -1,0 +1,24 @@
+pre-commit:
+  parallel: true
+  commands:
+    typecheck:
+      run: pnpm typecheck
+    lint:
+      run: pnpm lint
+    format:
+      run: pnpm format
+
+pre-push:
+  parallel: true
+  commands:
+    typecheck:
+      run: pnpm typecheck
+    lint:
+      run: pnpm lint:check
+    format-check:
+      run: pnpm format:check
+
+commit-msg:
+  commands:
+    commitlint:
+      run: npx --no -- commitlint --edit "$LEFTHOOK_COMMIT_MSG"
