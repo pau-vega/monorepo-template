@@ -12,6 +12,7 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "eslint . --fix",
+    "lint:check": "eslint .",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf dist"
