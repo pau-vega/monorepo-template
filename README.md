@@ -44,3 +44,16 @@ pnpm build
 | `pnpm e2e`           | Run end-to-end tests (Playwright)  |
 | `pnpm test:coverage` | Run tests with coverage            |
 | `pnpm clean`         | Remove build artifacts             |
+
+## Agent prompt templates
+
+Fillable prompts for any AI coding agent (Claude Code, Cursor, Aider, Cline, Codex, etc.). Copy, fill in the `{{PLACEHOLDERS}}`, paste into your agent.
+
+| Template                                                                 | When to use                                              |
+| ------------------------------------------------------------------------ | -------------------------------------------------------- |
+| [`.agents/templates/new-project-prompt.md`](.agents/templates/new-project-prompt.md) | Bootstrapping a new project from this template           |
+| [`.agents/templates/new-feature-prompt.md`](.agents/templates/new-feature-prompt.md) | Adding a feature to an existing project                  |
+| [`.agents/templates/bugfix-prompt.md`](.agents/templates/bugfix-prompt.md)           | Investigating and fixing a bug                           |
+| [`.agents/templates/refactor-prompt.md`](.agents/templates/refactor-prompt.md)       | Behavior-preserving restructuring or modernization       |
+
+Project-wide rules and conventions live in [`CLAUDE.md`](CLAUDE.md) and [`.agents/rules/`](.agents/rules/).
