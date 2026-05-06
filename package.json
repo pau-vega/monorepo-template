@@ -9,15 +9,13 @@
     "build": "turbo build",
     "preview": "turbo preview",
     "lint": "turbo lint",
-    "format": "turbo format",
+    "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "turbo typecheck",
     "clean": "turbo clean",
     "test": "turbo test",
     "e2e": "turbo e2e",
     "test:coverage": "turbo test -- --coverage",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
     "lint:check": "turbo lint:check"
   },
   "devDependencies": {
