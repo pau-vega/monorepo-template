@@ -146,5 +146,5 @@ nuke: clean-artifacts
 [group('maintenance')]
 [default]
 phoenix: nuke
+    pnpm up -r
     pnpm install
-
