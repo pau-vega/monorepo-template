@@ -71,7 +71,7 @@ A monorepo GitHub template (`base-monorepo-template`) used as the starting point
 - rimraf 6.1.3 - Cross-platform file deletion utility
 - glob 13.0.6 - File pattern matching (used in tsup config)
 - globals 17.5.0 - Global object/variable definitions for linting
-- husky 9.1.7 - Git hooks manager
+- lefthook 2.1.6 - Git hooks manager
 - @commitlint/cli 20.5.0 - Commit message linting
 - @commitlint/config-conventional 20.5.0 - Conventional commits config
 ## Configuration
