@@ -17,7 +17,7 @@
 - Node.js 24+ (specified in `package.json` engines field and `.nvmrc`)
 
 **Package Manager:**
-- pnpm 10.29.3
+- pnpm 11.1.1
 - Lockfile: `pnpm-lock.yaml` (enforced with `preferFrozenLockfile: true`)
 
 ## Frameworks
@@ -109,7 +109,7 @@
 
 **Development:**
 - Node.js >= 24
-- pnpm 10.29.3
+- pnpm 11.1.1
 - System supporting Node.js v24
 
 **Production:**

@@ -2,6 +2,11 @@ packages:
   - apps/*
   - packages/*
 
+allowBuilds:
+  esbuild: true
+  lefthook: true
+  msw: true
+
 catalog:
   '@testing-library/jest-dom': ^6.9.1
   '@testing-library/react': ^16.3.2
@@ -24,7 +29,5 @@ catalog:
   vitest: ^4.1.6
 
 dedupePeerDependents: true
-
-onlyBuiltDependencies: []
 
 preferFrozenLockfile: true

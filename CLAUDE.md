@@ -23,7 +23,7 @@ A monorepo GitHub template (`base-monorepo-template`) used as the starting point
 - JSX/TSX - React component syntax used in UI package and showcase app
 ## Runtime
 - Node.js 24+ (specified in `package.json` engines field and `.nvmrc`)
-- pnpm 10.29.3
+- pnpm 11.1.1
 - Lockfile: `pnpm-lock.yaml` (enforced with `preferFrozenLockfile: true`)
 ## Frameworks
 - React 19.2.5 - UI library for building components
@@ -86,7 +86,7 @@ A monorepo GitHub template (`base-monorepo-template`) used as the starting point
 - Dedupe enabled: `dedupePeerDependents: true`
 ## Platform Requirements
 - Node.js >= 24
-- pnpm 10.29.3
+- pnpm 11.1.1
 - System supporting Node.js v24
 - No backend/server infrastructure required - This is a frontend component library and showcase application
 - Deployment target: Static site hosting (compatible with any static host via Vite output)
