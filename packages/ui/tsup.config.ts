@@ -1,32 +1,30 @@
-import { glob } from "glob"
-import { defineConfig } from "tsup"
+import { globSync } from "glob"
+import { defineConfig, type Options } from "tsup"
+
+const shared: Options = {
+  format: ["esm"],
+  // Workaround: tsup DTS builder uses deprecated baseUrl internally (tsup#1388)
+  // https://github.com/egoist/tsup/issues/1388 — remove when tsup fixes this
+  dts: { compilerOptions: { ignoreDeprecations: "6.0" } },
+  sourcemap: true,
+  external: ["react", "react-dom"],
+  outDir: "dist",
+  outExtension: () => ({ js: ".js" }),
+}
 
 export default defineConfig([
   {
+    ...shared,
     // Components + hooks: need "use client"
-    entry: [...glob.sync("src/components/*.tsx"), ...glob.sync("src/hooks/*.ts")],
-    format: ["esm"],
-    // Workaround: tsup DTS builder uses deprecated baseUrl internally (tsup#1388)
-    // https://github.com/egoist/tsup/issues/1388 — remove when tsup fixes this
-    dts: { compilerOptions: { ignoreDeprecations: "6.0" } },
-    sourcemap: true,
+    entry: [...globSync("src/components/*.tsx"), ...globSync("src/hooks/*.ts")],
     clean: true,
-    external: ["react", "react-dom"],
     banner: { js: '"use client";' },
-    outDir: "dist",
-    outExtension: () => ({ js: ".js" }),
   },
   {
+    ...shared,
     // Barrel index + utils: no "use client"
     entry: ["src/index.ts", "src/lib/utils.ts"],
-    format: ["esm"],
-    // Workaround: tsup DTS builder uses deprecated baseUrl internally (tsup#1388)
-    // https://github.com/egoist/tsup/issues/1388 — remove when tsup fixes this
-    dts: { compilerOptions: { ignoreDeprecations: "6.0" } },
-    sourcemap: true,
+    // clean: false — first config above already cleaned dist; don't wipe its output
     clean: false,
-    external: ["react", "react-dom"],
-    outDir: "dist",
-    outExtension: () => ({ js: ".js" }),
   },
 ])
