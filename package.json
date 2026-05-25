@@ -28,7 +28,7 @@
     "@types/node": "^25.8.0",
     "@vitest/coverage-v8": "catalog:",
     "jsdom": "catalog:",
-    "lefthook": "^2.1.6",
+    "lefthook": "^2.1.8",
     "prettier": "catalog:",
     "rimraf": "catalog:",
     "turbo": "^2.9.14",
