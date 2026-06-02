@@ -31,7 +31,7 @@
     "lefthook": "^2.1.6",
     "prettier": "catalog:",
     "rimraf": "catalog:",
-    "turbo": "^2.9.14",
+    "turbo": "^2.9.16",
     "typescript": "catalog:",
     "vitest": "catalog:"
   },
