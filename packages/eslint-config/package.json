@@ -32,10 +32,10 @@
     "typescript": ">=5.0.0"
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "^5.8.17",
+    "@eslint-react/eslint-plugin": "^5.9.1",
     "@eslint/js": "^10.0.1",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-perfectionist": "^5.9.0",
+    "eslint-plugin-perfectionist": "^5.9.1",
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "catalog:",
@@ -44,7 +44,7 @@
   "devDependencies": {
     "@monorepo-template/tsconfig": "workspace:*",
     "eslint": "catalog:",
-    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-react-refresh": "^0.5.3",
     "prettier": "catalog:",
     "tsup": "catalog:",
     "typescript": "catalog:"
