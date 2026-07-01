@@ -16,7 +16,7 @@ packages/
 ## Prerequisites
 
 - Node.js >= 24
-- pnpm 10
+- pnpm 11
 
 ## Getting started
 

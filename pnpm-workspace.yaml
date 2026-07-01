@@ -25,6 +25,10 @@ catalog:
 
 dedupePeerDependents: true
 
-onlyBuiltDependencies: []
+allowBuilds:
+  esbuild: true
+
+# Disabled by default; opt in by setting minutes to gate against very recently published packages.
+minimumReleaseAge: 0
 
 preferFrozenLockfile: true
