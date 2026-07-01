@@ -127,7 +127,7 @@ explicitly says so.
 **Inherited (do not change without asking):**
 
 - TypeScript (strict, `noUncheckedIndexedAccess`)
-- Node.js 24+, pnpm 10
+- Node.js 24+, pnpm 11
 - Turborepo for task orchestration
 - React 19, Vite 8, Tailwind CSS 4, Base UI React, shadcn
 - ESLint 10 (flat config) + Prettier (no semicolons, 120 cols)
